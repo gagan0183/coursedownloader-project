@@ -5,6 +5,8 @@ parser.add_argument("path")
 parser.add_argument("url")
 parser.add_argument("totalnumber")
 args = parser.parse_args()
+if not os.path.exists(args.path):
+	os.makedirs(args.path)
 os.chdir(args.path)
 count=0
 totalnumber=int(args.totalnumber)
@@ -18,6 +20,7 @@ while count < totalnumber:
 	count += 1
 	print(count)
 	try:
+		print('in success')
 		os.system('youtube-dl --username "gagan.bhullar988@gmail.com" --password "ARIHANT_90" --verbose --playlist-start {} --sleep-interval 90 {}'.format(count, url))
 	finally:
 		print('error')
