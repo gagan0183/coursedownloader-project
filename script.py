@@ -20,6 +20,7 @@ while count < totalnumber:
 	count += 1
 	print(count)
 	try:
-		os.system('youtube-dl --username "gagan.bhullar988@gmail.com" --password "ARIHANT_90" --verbose --playlist-start {} --sleep-interval 90 {}'.format(count, url))
+		print('in success')
+		os.system('youtube-dl --username "gagan.bhullar988@gmail.com" --password "ARIHANT_90" --verbose --playlist-start {} --external-downloader aria2c --sleep-interval 90 {}'.format(count, url))
 	finally:
 		print('error')
